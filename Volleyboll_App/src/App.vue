@@ -6,7 +6,7 @@ import slutspel from './views/slutspel.vue';
 export default {
   data() {
     return {
-      activeTab: 'hom',
+      activeTab: 'home',
     };
   },
   methods: {
@@ -25,6 +25,7 @@ export default {
 
 <template>
   <nav id="nav">
+      <img class="volleyimg" src="./assets/volleybollnobg.png">
     <button class="hamburger" @click="Nav_burgur"></button>   
   </nav>
 
@@ -61,6 +62,7 @@ export default {
   right: 0%;
   height: fit-content;
   min-height: 90%;
+  overflow: auto;
   background-image: url(./assets/Bakgrundsbild.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -73,5 +75,11 @@ export default {
   left: 80%;
   background-color: transparent;
   border:none;
+}
+.volleyimg {
+  position:absolute;
+  z-index:150;
+  height:3.5em;
+  width:3.5em;
 }
 </style>

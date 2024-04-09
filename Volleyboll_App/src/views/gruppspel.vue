@@ -148,11 +148,6 @@ export default {
 </script>
 
 <template>
-  <nav id="nav">
-    <button class="hamburger" @click="Nav_burgur"></button>   
-  </nav>
-
-  <main id="main">
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Search..">
     <button class="search-btn">
@@ -168,7 +163,7 @@ export default {
     <button @click="toggleVisibility" class="group-container" v-if="groupAData && groupAData.length > 0">
       <h3 class="Grupper">Grupp A</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+      <img class="pil" src="../assets/pngwing2.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible" class="group-dropdown">
       <table id="groupA">
@@ -217,7 +212,7 @@ export default {
     <button @click="toggleVisibility2" class="group-container" v-if="groupBData && groupBData.length > 0">
       <h3 class="Grupper">Grupp B</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+      <img class="pil" src="../assets/pngwing2.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible2" class="group-dropdown">
       <table id="groupB">
@@ -262,7 +257,7 @@ export default {
     <button @click="toggleVisibility3" class="group-container" v-if="groupCData && groupCData.length > 0">
       <h3 class="Grupper">Grupp C</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+      <img class="pil" src="../assets/pngwing2.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible3" class="group-dropdown">
       <table id="groupC">
@@ -306,7 +301,7 @@ export default {
     <button @click="toggleVisibility4" class="group-container" v-if="groupDData && groupDData.length > 0">
       <h3 class="Grupper">Grupp D</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+      <img class="pil" src="../assets/pngwing2.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible4" class="group-dropdown">
       <table id="groupD">
@@ -350,7 +345,7 @@ export default {
     <button @click="toggleVisibility5" class="group-container">
       <h3 class="Grupper">Grupp E</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+      <img class="pil" src="../assets/pngwing2.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible5" class="group-dropdown">
       <table id="groupE">
@@ -389,7 +384,6 @@ export default {
         </tr>
       </table>
   </div>
-  </main>
 </template>
 
 <style scoped>

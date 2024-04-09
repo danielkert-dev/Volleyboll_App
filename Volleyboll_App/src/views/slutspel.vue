@@ -13,39 +13,53 @@ export default {
       rounds: [
       {
           games: [
+            //last game
             {
               // Datan inom bracketsen
-              player1: { id: "2", name: "Deltagare 2", winner: true },
-              player2: { id: "4", name: "Deltagare 4", winner: false },
+              player1: { id: "2", name: "Deltagare 2", winner: true, points: 10  },
+              player2: { id: "4", name: "Deltagare 4", winner: false, points: 1  },
+            },
+
+          ]
+        },
+      {
+          games: [
+            //fist game
+            {
+              // Datan inom bracketsen
+              player1: { id: "2", name: "Deltagare 2", winner: true, points: 3 },
+              player2: { id: "4", name: "Deltagare 4", winner: false, points: 14 },
             },
             {
-              player1: { id: "5", name: "Deltagare 5", winner: false },
-              player2: { id: "8", name: "Deltagare 8", winner: true },
+              player1: { id: "5", name: "Deltagare 5 24", winner: false, points: 9 },
+              player2: { id: "8", name: "Deltagare 8", winner: true, points: 7 },
             },
             {
-              player1: { id: "10", name: "Deltagare 10", winner: false },
-              player2: { id: "12", name: "Deltagare 12", winner: true },
+              player1: { id: "10", name: "Deltagare 10", winner: false, points: 4 },
+              player2: { id: "12", name: "Deltagare 12", winner: true, points: 6 },
             },
             {
-              player1: { id: "10", name: "Deltagare 10", winner: false },
-              player2: { id: "12", name: "Deltagare 12", winner: true },
+              player1: { id: "10", name: "Deltagare 10", winner: false, points: 10 },
+              player2: { id: "12", name: "Deltagare 12", winner: true, points: 15 },
             }
           ]
         },  
       {
+        //second game
           games: [
             {
-              player1: { id: "2", name: "Deltagare 2", winner: false },
-              player2: { id: "4", name: "Deltagare 4", winner: true },
+              player1: { id: "2", name: "Deltagare 2", winner: false, points: 1 },
+              player2: { id: "4", name: "Deltagare 4", winner: true, points: 12 },
             },
             {
-              player1: { id: "5", name: "Deltagare 5", winner: false },
-              player2: { id: "8", name: "Deltagare 8", winner: true },
+              player1: { id: "5", name: "Deltagare 5", winner: false, points: 82 },
+              player2: { id: "8", name: "Deltagare 8", winner: true, points: 2 },
             }
           ]
         },
         {
           games: [
+            //last game
             {
               player1: { id: "1", name: "väntar spelare", winner: null },
               player2: { id: "1", name: "väntar spelare", winner: null },
@@ -58,7 +72,7 @@ export default {
     ;
   },
   methods: {
-    getPlayerClass(player) {
+    getPlayerClass(player){
     },
     toggleDropdown(player) {
       // Stäng alla dropdown förutom den som klickades
@@ -113,19 +127,11 @@ export default {
 </script>
 
 <template>
-
-  <div class="nav">
-    <div class="logo">
-      <img class="volleyimg" src="@/assets/volleybollnobg.png">
-    </div>
-    <button class="hamburger"></button>  
-  </div>
-  
   <vue-tournament-bracket :rounds="rounds">
     <template v-slot:player="{ player }">
       <div class="popup-trigger" @click.stop="toggleDropdown(player)">
         <span :class="getPlayerClass(player)">
-          {{ player.name }}
+          {{ player.name }} <span class="points">{{ player.points }}</span>
         </span>
       </div>
       <div v-if="player.showDropdown" class="dropdown">
@@ -138,17 +144,42 @@ export default {
   <img class="phone-img" src="https://cdn-icons-png.freepik.com/512/68/68737.png" alt="turn the phone">
   </div>
 
-
   <div class="box">
     <p class="boxtext">Most points: IT21</p>
     <p class="boxtext">Best W/L: IT21</p>
     <p class="boxtext">Price: Pizza</p>
   </div>
+
+  <div class="phone-container">
+  <img class="phone-img" src="https://cdn-icons-png.freepik.com/512/68/68737.png" alt="turn the phone">
+  </div>
+
 </template>
 
-
-
 <style>
+
+.points{
+  position: absolute;
+  display: inline-grid;
+  background-color: black;
+  border-radius: 3px;
+  left: 200px;
+  width: 20px;
+  text-align: center;
+}
+
+.points {
+  position: absolute;
+  display: inline-grid;
+  background-color: black;
+  border-radius: 3px;
+  top: 50%; /* Adjust this to position the points vertically */
+  left: 50%; /* Adjust this to position the points horizontally */
+  transform: translate(-50%, -50%); /* This centers the points within the .vtb-item-players */
+  width: 20px;
+  text-align: center;
+  color: white; /* Assuming you want the text to be white for visibility */
+}
 
 .box {
   position:absolute;
@@ -159,47 +190,10 @@ export default {
   right:0%;
   margin:5%;
 }
-
 .boxtext {
   font-size:1.2em;
   padding:3%;
 }
-
-.nav {
-  background-color: blue;
-  position:fixed;
-  top:0%;
-  left:0%;
-  right:0%;
-  height:3.5em;
-  z-index:200;
-}
-
-.hamburger{
-  background-image: url(../assets/Bakgrundsbild.png);
-  background-color:transparent;
-  border:transparent;
-  position: fixed;
-  width: 3.8em;
-  height:3.2em;
-  top:1%;
-  right: 2%;
-}
-
-.volleyimg {
-  position:fixed;
-  z-index:150;
-  height:3.5em;
-  width:3.5em;
-}
-
-.logo {
-  position:fixed;
-  z-index:150;
-  height:3.2em;
-  width:3.2em;
-}
-
 .dropdown {
   position: absolute;
   background-color: black; 
@@ -217,18 +211,41 @@ export default {
   top: 20% !important;
   bottom:30%!important;
   left:5%;
-  display: block !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Ensures the wrapper doesn't exceed the width of #main */
+  padding: 10px; /* Adjust as needed, gives some space inside the main container */
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
+
+.vtb-item {
+  max-width: calc(90% - 20px);
+  min-height: 50px; /* Adjust the width to account for padding or any additional space */
+  margin: 10px;
+  padding: 5px; /* Centers the item if it's smaller than the container */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated, .popup-trigger {
+  max-width: calc(100% / numberOfItemsInRow - margin); /* Adjust numberOfItemsInRow to the number of items per row */
+}
+
 .vtb-item-players .not-started {
+  position: relative;
   background-color: gray !important;
 }
+/*
 .vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated, .popup-trigger {
   width:15em;
-}
+}*/
 .vtb-item-players .winner {
+  position: relative;
   background-color: rgb(5, 171, 5) !important;
 }
 .vtb-item-players .defeated {
+  position: relative;
   background-color: red !important;
 }
 
@@ -236,19 +253,7 @@ export default {
   display: none;
   }
 
-
-@media only screen and (max-height:600px){
-  .box {
-  position:absolute;
-  border: solid black;
-  border-radius:30px;
-  text-align: center;
-  top:400px;
-  right:0px;
-  bottom:auto;
-}
-}
-
+  
 @media only screen and (max-width:450px){
   .phone-img {
     display: flex;
@@ -260,7 +265,6 @@ export default {
     transform: translate(-50%, -50%);
     z-index: 150; 
   }
-
   .phone-container {
     position: fixed;
     top: 0;
@@ -274,18 +278,18 @@ export default {
     align-items: center;
     z-index: 149;
   }
-
-  .nav {
-  background-color: blue;
-  position:fixed;
-  top:0%;
-  left:0%;
-  right:0%;
-  height:4.5em;
-  z-index:200;
 }
 
-
+@media only screen and (max-height:600px){
+  .box {
+  position:absolute;
+  border: solid black;
+  border-radius:30px;
+  text-align: center;
+  top:400px;
+  right:0px;
+  bottom:auto;
 }
 
+}
 </style>
