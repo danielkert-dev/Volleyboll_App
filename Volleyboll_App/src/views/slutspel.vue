@@ -173,12 +173,12 @@ export default {
   display: inline-grid;
   background-color: black;
   border-radius: 3px;
-  top: 50%; /* Adjust this to position the points vertically */
-  left: 90%; /* Adjust this to position the points horizontally */
-  transform: translate(-50%, -50%); /* This centers the points within the .vtb-item-players */
+  top: 50%; 
+  left: 90%;
+  transform: translate(-50%, -50%);
   width: 20px;
   text-align: center;
-  color: white; /* Assuming you want the text to be white for visibility */
+  color: white; 
 }
 
 .box {
@@ -215,9 +215,9 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 100%; /* Ensures the wrapper doesn't exceed the width of #main */
-  padding: 10px; /* Adjust as needed, gives some space inside the main container */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  max-width: 100%;
+  padding: 10px; 
+  box-sizing: border-box; 
 }
 
 
