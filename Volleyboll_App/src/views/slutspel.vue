@@ -180,12 +180,12 @@ document.addEventListener("DOMContentLoaded", function() {
   display: inline-grid;
   background-color: black;
   border-radius: 3px;
-  top: 50%; /* Adjust this to position the points vertically */
-  left: 50%; /* Adjust this to position the points horizontally */
-  transform: translate(-50%, -50%); /* This centers the points within the .vtb-item-players */
+  top: 50%; 
+  left: 90%;
+  transform: translate(-50%, -50%);
   width: 20px;
   text-align: center;
-  color: white; /* Assuming you want the text to be white for visibility */
+  color: white; 
 }
 
 .plus{
@@ -226,36 +226,27 @@ document.addEventListener("DOMContentLoaded", function() {
   position: absolute; 
   top: 20% !important;
   bottom:30%!important;
-  left:5%;
+  left:2%;
   display: flex !important;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 100%; /* Ensures the wrapper doesn't exceed the width of #main */
-  padding: 10px; /* Adjust as needed, gives some space inside the main container */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  max-width: 100%;
+  padding: 10px; 
+  box-sizing: border-box; 
 }
 
-.vtb-item {
-  max-width: calc(90% - 20px);
-  min-height: 50px; /* Adjust the width to account for padding or any additional space */
-  margin: 10px;
-  padding: 5px; /* Centers the item if it's smaller than the container */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
-}
 
-.vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated, .popup-trigger {
-  max-width: calc(100% / numberOfItemsInRow - margin); /* Adjust numberOfItemsInRow to the number of items per row */
-}
+
 
 .vtb-item-players .not-started {
   position: relative;
   background-color: gray !important;
 }
-/*
+
 .vtb-item-players, .vtb-item-players .winner, .vtb-item-players .defeated, .popup-trigger {
-  width:15em;
-}*/
+  width:8em;
+}
 .vtb-item-players .winner {
   position: relative;
   background-color: rgb(5, 171, 5) !important;
