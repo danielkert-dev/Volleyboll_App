@@ -26,6 +26,18 @@ export default {
 <template>
   <nav id="nav">
       <img class="volleyimg" src="./assets/volleybollnobg.png">
+    <div class="gold">
+      <img class="goldimg" src="@/assets/gold.png">
+      <div class="goldteam">IT21</div>
+    </div>
+    <div class="silver">
+      <img class="silverimg" src="@/assets/silver.png">
+      <div class="silverteam">IT22</div>
+    </div>
+    <div class="bronze">
+      <img class="bronzeimg" src="@/assets/bronze.png">
+      <div class="bronzeteam">MERK 40</div>
+    </div>
     <button class="hamburger" @click="Nav_burgur"></button>   
   </nav>
 
@@ -44,6 +56,46 @@ export default {
 </template>
 
 <style scoped>
+
+.goldteam{
+  position:absolute;
+left: 95px;
+top:25px;
+color:white;
+}
+
+.goldimg{
+position:absolute;
+left:60px;
+top:20px;
+}
+
+.silverteam{
+  position:absolute;
+left:185px;
+top:25px;
+color:white;
+}
+
+.silverimg{
+position:absolute;
+left:150px;
+top:20px;
+}
+
+.bronzeteam{
+  position: absolute;
+left:275px;
+top:25px;
+color:white;
+}
+
+.bronzeimg{
+position:absolute;
+left:240px;
+top:20px;
+}
+
 #nav {
   position: absolute;
   display: flex;
@@ -52,7 +104,7 @@ export default {
   top: 0%;
   height: 10%;
   align-items: center;
-  background-color: darkgreen;
+  background-color: #124076;
 }
 #main {
   position: absolute;
