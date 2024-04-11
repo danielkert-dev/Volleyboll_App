@@ -352,16 +352,4 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 }
 
-@media only screen and (max-height:600px){
-  .box {
-  position:absolute;
-  border: solid black;
-  border-radius:30px;
-  text-align: center;
-  top:400px;
-  right:0px;
-  bottom:auto;
-}
-
-}
 </style>
