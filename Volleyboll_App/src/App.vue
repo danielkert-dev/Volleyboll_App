@@ -1,7 +1,40 @@
+<template>
+
+  <main id="main">
+    <nav id="nav">
+      <img class="volleyimg" src="./assets/volleybollnobg.png">
+    <div class="gold">
+      <img class="goldimg" src="@/assets/gold.png">
+      <div class="goldteam">IT21</div>
+    </div>
+    <div class="silver">
+      <img class="silverimg" src="@/assets/silver.png">
+      <div class="silverteam">IT22</div>
+    </div>
+    <div class="bronze">
+      <img class="bronzeimg" src="@/assets/bronze.png">
+      <div class="bronzeteam">MERK 40</div>
+    </div>
+    <button class="hamburger" @click="Nav_burgur"></button>   
+    <RouterLink to="/gruppspel">gruppspel</RouterLink>
+    <RouterLink to="/slutspel">slutspel</RouterLink>
+  </nav>
+
+    <div ref="Olika_view" style="display: none;">
+      <div>
+        <RouterLink to="/gruppspel">gruppspel</RouterLink>
+      </div>
+      <div>
+        <RouterLink to="/slutspel">slutspel</RouterLink>
+      </div>
+    </div>
+
+    <RouterView />
+    </main>
+</template>
+
 <script>
 import { RouterLink, RouterView } from 'vue-router'
-import gruppspel from './views/gruppspel.vue';
-import slutspel from './views/slutspel.vue';
 
 export default {
   data() {
@@ -22,40 +55,6 @@ export default {
 };
 
 </script>
-
-<template>
-  <nav id="nav">
-      <img class="volleyimg" src="./assets/volleybollnobg.png">
-    <div class="gold">
-      <img class="goldimg" src="@/assets/gold.png">
-      <div class="goldteam">IT21</div>
-    </div>
-    <div class="silver">
-      <img class="silverimg" src="@/assets/silver.png">
-      <div class="silverteam">IT22</div>
-    </div>
-    <div class="bronze">
-      <img class="bronzeimg" src="@/assets/bronze.png">
-      <div class="bronzeteam">MERK 40</div>
-    </div>
-    <button class="hamburger" @click="Nav_burgur"></button>   
-    <RouterLink to="/gruppspel">gruppspel</RouterLink>
-    <RouterLink to="/slutspel">slutspel</RouterLink>
-  </nav>
-
-  <main id="main">
-    <div ref="Olika_view" style="display: none;">
-      <div>
-        <RouterLink to="/gruppspel">gruppspel</RouterLink>
-      </div>
-      <div>
-        <RouterLink to="/slutspel">slutspel</RouterLink>
-      </div>
-    </div>
-
-    <RouterView />
-    </main>
-</template>
 
 <style scoped>
 
@@ -110,12 +109,12 @@ top:20px;
 }
 #main {
   position: absolute;
-  top: 10%;
+  top: 0%;
   bottom: 0%;
   left: 0%;
   right: 0%;
   height: fit-content;
-  min-height: 90%;
+  min-height: 100vh;
   overflow: auto;
   background-image: url(./assets/Bakgrundsbild.png);
   background-repeat: no-repeat;

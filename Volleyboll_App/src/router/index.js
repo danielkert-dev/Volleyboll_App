@@ -1,21 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import gruppspel from '../views/gruppspel.vue';
-import slutspel from '../views/slutspel.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // Use createWebHashHistory instead of createWebHistory
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/gruppspel',
       name: 'gruppspel',
-      component:gruppspel
+      component: () => import('../views/gruppspel.vue')
     },
     {
       path: '/slutspel',
       name: 'slutspel',
-      component:slutspel
+      component: () => import('../views/slutspel.vue')
     }
+    // Add other routes here as needed
   ]
-})
+});
 
 export default router
