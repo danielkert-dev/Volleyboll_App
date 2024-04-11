@@ -27,6 +27,8 @@ export default {
   <nav id="nav">
       <img class="volleyimg" src="./assets/volleybollnobg.png">
     <button class="hamburger" @click="Nav_burgur"></button>   
+    <RouterLink to="/gruppspel">gruppspel</RouterLink>
+    <RouterLink to="/slutspel">slutspel</RouterLink>
   </nav>
 
   <main id="main">
